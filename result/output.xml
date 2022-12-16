@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.9 on darwin)" generated="20221118 11:43:43.041" rpa="false" schemaversion="3">
+<suite id="s1" name="apiAutomation" source="/Users/cho/Downloads/2022_automation_demo/API_DEMO/test_case/apiAutomation.robot">
+<test id="s1-t1" name="1. GET a list of users" line="17">
+<kw name="GET" library="REST">
+<arg>/api/users?page=2</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.366" endtime="20221118 11:43:45.739"/>
+</kw>
+<kw name="response status code should be &quot;200&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.740" endtime="20221118 11:43:45.742"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:45.740" endtime="20221118 11:43:45.742"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response body page</arg>
+<arg>2</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.743" endtime="20221118 11:43:45.744"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response body per_page</arg>
+<arg>6</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.744" endtime="20221118 11:43:45.745"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response body total</arg>
+<arg>12</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.745" endtime="20221118 11:43:45.747"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>$.data[*].id</arg>
+<arg>minimum=7</arg>
+<arg>maximum=12</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.747" endtime="20221118 11:43:45.816"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.support.url</arg>
+<arg>https://reqres.in/#support-heading</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.816" endtime="20221118 11:43:45.839"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.support.text</arg>
+<arg>To keep ReqRes free, contributions towards server costs are appreciated!</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.839" endtime="20221118 11:43:45.862"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:45.365" endtime="20221118 11:43:45.862"/>
+</test>
+<test id="s1-t2" name="2. GET a single user" line="27">
+<kw name="GET" library="REST">
+<arg>/api/users/2</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:45.863" endtime="20221118 11:43:46.637"/>
+</kw>
+<kw name="response status code should be &quot;200&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.638" endtime="20221118 11:43:46.639"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:46.638" endtime="20221118 11:43:46.639"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>$.data.id</arg>
+<arg>2</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.640" endtime="20221118 11:43:46.661"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.data.email</arg>
+<arg>janet.weaver@reqres.in</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.662" endtime="20221118 11:43:46.685"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.data.first_name</arg>
+<arg>Janet</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.685" endtime="20221118 11:43:46.708"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.data.last_name</arg>
+<arg>Weaver</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.708" endtime="20221118 11:43:46.731"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$.data.avatar</arg>
+<arg>https://reqres.in/img/faces/2-image.jpg</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.731" endtime="20221118 11:43:46.754"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:45.862" endtime="20221118 11:43:46.754"/>
+</test>
+<test id="s1-t3" name="3. GET a non-exist user" line="36">
+<kw name="GET" library="REST">
+<arg>/api/users/23</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:46.755" endtime="20221118 11:43:47.486"/>
+</kw>
+<kw name="response status code should be &quot;404&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:47.486" endtime="20221118 11:43:47.488"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:47.486" endtime="20221118 11:43:47.488"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:46.755" endtime="20221118 11:43:47.488"/>
+</test>
+<test id="s1-t4" name="4. GET a list of resource" line="40">
+<kw name="GET" library="REST">
+<arg>/api/unknown</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:47.489" endtime="20221118 11:43:48.203"/>
+</kw>
+<kw name="response status code should be &quot;200&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.204" endtime="20221118 11:43:48.205"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:48.203" endtime="20221118 11:43:48.205"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response body total</arg>
+<arg>12</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.205" endtime="20221118 11:43:48.206"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:47.488" endtime="20221118 11:43:48.207"/>
+</test>
+<test id="s1-t5" name="5. GET a single resource" line="45">
+<kw name="GET" library="REST">
+<arg>/api/unknown/2</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.207" endtime="20221118 11:43:48.461"/>
+</kw>
+<kw name="response status code should be &quot;200&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.461" endtime="20221118 11:43:48.463"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:48.461" endtime="20221118 11:43:48.463"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>$.data.id</arg>
+<arg>2</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.463" endtime="20221118 11:43:48.486"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:48.207" endtime="20221118 11:43:48.486"/>
+</test>
+<test id="s1-t6" name="6. Create a new user" line="50">
+<kw name="POST" library="REST">
+<arg>/api/users</arg>
+<arg>${post data}</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:48.487" endtime="20221118 11:43:49.225"/>
+</kw>
+<kw name="response status code should be &quot;201&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:49.226" endtime="20221118 11:43:49.227"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:49.225" endtime="20221118 11:43:49.227"/>
+</kw>
+<kw name="String response body &quot;name&quot; should be &quot;morpheus&quot;" library="apiAutomationKeyword" sourcename="String response body &quot;${body name}&quot; should be &quot;${string data}&quot;">
+<kw name="String" library="REST">
+<arg>response body ${body name}</arg>
+<arg>${string data}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:49.227" endtime="20221118 11:43:49.229"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:49.227" endtime="20221118 11:43:49.229"/>
+</kw>
+<kw name="String response body &quot;job&quot; should be &quot;leader&quot;" library="apiAutomationKeyword" sourcename="String response body &quot;${body name}&quot; should be &quot;${string data}&quot;">
+<kw name="String" library="REST">
+<arg>response body ${body name}</arg>
+<arg>${string data}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:49.229" endtime="20221118 11:43:49.231"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:49.229" endtime="20221118 11:43:49.231"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:48.486" endtime="20221118 11:43:49.231"/>
+</test>
+<test id="s1-t7" name="7. Update a user data" line="56">
+<kw name="PUT" library="REST">
+<arg>/api/users/2</arg>
+<arg>${put data}</arg>
+<tag>http</tag>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:49.232" endtime="20221118 11:43:50.007"/>
+</kw>
+<kw name="response status code should be &quot;200&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:50.007" endtime="20221118 11:43:50.009"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:50.007" endtime="20221118 11:43:50.009"/>
+</kw>
+<kw name="String" library="REST">
+<arg>response body name</arg>
+<arg>morpheus</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:50.009" endtime="20221118 11:43:50.010"/>
+</kw>
+<kw name="String" library="REST">
+<arg>response body job</arg>
+<arg>zion resident</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20221118 11:43:50.010" endtime="20221118 11:43:50.012"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:49.231" endtime="20221118 11:43:50.012"/>
+</test>
+<test id="s1-t8" name="8. Delete a user" line="62">
+<kw name="DELETE" library="REST">
+<arg>/api/users/2</arg>
+<tag>http</tag>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<status status="PASS" starttime="20221118 11:43:50.012" endtime="20221118 11:43:50.766"/>
+</kw>
+<kw name="response status code should be &quot;204&quot;" library="apiAutomationKeyword" sourcename="response status code should be &quot;${status code}&quot;">
+<kw name="Integer" library="REST">
+<arg>response status</arg>
+<arg>${status code}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="PASS" starttime="20221118 11:43:50.767" endtime="20221118 11:43:50.768"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:50.766" endtime="20221118 11:43:50.768"/>
+</kw>
+<status status="PASS" starttime="20221118 11:43:50.012" endtime="20221118 11:43:50.768"/>
+</test>
+<status status="PASS" starttime="20221118 11:43:43.042" endtime="20221118 11:43:50.769"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="apiAutomation">apiAutomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
