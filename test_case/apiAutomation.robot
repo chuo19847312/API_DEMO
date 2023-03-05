@@ -50,8 +50,8 @@ ${put data}     {"name": "morpheus","job": "zion resident"}
 6. Create a new user
     POST    /api/users      ${post data}
     response status code should be "201"
-    String response body "name" should be "morpheus"
-    String response body "job" should be "leader"
+    String      response body name      morpheus
+    String      response body job       leader
 
 7. Update a user data
     PUT     /api/users/2    ${put data}
